@@ -1,2 +1,3 @@
 # javierWang
 http-client是httpclient的测试类，主要包括get和post提交
+file-upload是文件上传的测试方法，主要是通过前端页面将文件上传到aliyun-oss中

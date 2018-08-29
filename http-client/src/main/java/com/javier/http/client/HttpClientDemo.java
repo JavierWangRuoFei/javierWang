@@ -20,6 +20,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -138,8 +139,15 @@ public final class HttpClientDemo {
     }
 
     public static void main(String[] args) {
-        String url = "http://localhost:8080/etl/actions/trans/queryDepartment";
-        String result = HttpClientDemo.doPost(url);
+//        String url = "http://59.110.54.49:8081/xaetl-web/actions/verify/login";
+        String url = "http://localhost:8081/manage/topicRule/getByTopicCodeTableName";
+        Map<String, String> param = new HashMap<String, String>();
+//        param.put("loginName","1");
+//        param.put("loginPwd","c4ca4238a0b923820dcc509a6f75849b");
+        param.put("topicCode","cert");
+        param.put("tableName","syczmj_hj_t_p_organization");
+//        String result = HttpClientDemo.doPost(url);
+        String result = HttpClientDemo.doGet(url,param);
         System.out.println(result);
     }
 }
