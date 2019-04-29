@@ -1,5 +1,6 @@
 package com.javier.http.client;
 
+import com.javier.util.EncryptUtil;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -139,14 +140,16 @@ public final class HttpClientDemo {
     }
 
     public static void main(String[] args) {
-//        String url = "http://59.110.54.49:8081/xaetl-web/actions/verify/login";
-        String url = "http://localhost:8081/manage/topicRule/getByTopicCodeTableName";
+        String url = "http://125.35.63.166/interface/services/queryStandardService?wsdl=queryStandard";
         Map<String, String> param = new HashMap<String, String>();
-//        param.put("loginName","1");
-//        param.put("loginPwd","c4ca4238a0b923820dcc509a6f75849b");
-        param.put("topicCode","cert");
-        param.put("tableName","syczmj_hj_t_p_organization");
-//        String result = HttpClientDemo.doPost(url);
+        String pubKey = "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAMJIgldkqK+w7PmehLKSUtr0KlN0AgIszcyEjVJVeVOjAt2bYqX24yknCEmbghtdyc0t5uYXA314zM9lwTlRpe8CAwEAAQ==";
+        String username = "xa20181228";
+        String password = "xa20181228";
+        String begintime = "2018-12-21 12:12:12";
+        String endtime = "2018-12-22 12:12:12";
+        String parameter = EncryptUtil.getParamter(pubKey,username,password,begintime,endtime);
+//        param.put("wsdl","queryStandard");
+        param.put("parameter",parameter);
         String result = HttpClientDemo.doGet(url,param);
         System.out.println(result);
     }
