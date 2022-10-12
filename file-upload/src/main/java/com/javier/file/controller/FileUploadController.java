@@ -38,8 +38,8 @@ public class FileUploadController {
         System.out.println(startTime);
         //oss客户端
         String endpoint = "http://oss-cn-hangzhou.aliyuncs.com";
-        String accessKeyId = "LTAIIhjDVEbWU1QW";
-        String accessKeySecret = "eQK5vucVZvBaYKdJWweLWjeBUqpKXP";
+        String accessKeyId = "***";
+        String accessKeySecret = "***";
         OSSClient ossClient = new OSSClient(endpoint,accessKeyId,accessKeySecret);
         String fileName = file.getOriginalFilename();
         System.out.println("filename:"+fileName);
@@ -69,8 +69,8 @@ public class FileUploadController {
         System.out.println(startTime);
         //oss客户端
         String endpoint = "http://oss-cn-hangzhou.aliyuncs.com";
-        String accessKeyId = "LTAIIhjDVEbWU1QW";
-        String accessKeySecret = "eQK5vucVZvBaYKdJWweLWjeBUqpKXP";
+        String accessKeyId = "***";
+        String accessKeySecret = "***";
         OSSClient ossClient = new OSSClient(endpoint,accessKeyId,accessKeySecret);
 
         try {
